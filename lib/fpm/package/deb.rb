@@ -534,7 +534,7 @@ class FPM::Package::Deb < FPM::Package
       end # No need to close, GzipWriter#close will close it.
     end
 
-    if File.exists?(dest_changelog) and not File.exists?(dest_upstream_changelog)
+    if File.exist?(dest_changelog) and not File.exist?(dest_upstream_changelog)
       # see https://www.debian.org/doc/debian-policy/ch-docs.html#s-changelogs
       File.rename(dest_changelog, dest_upstream_changelog)
     end
